@@ -44,7 +44,7 @@ namespace Kutse_App_Vsevolod.Controllers
                 WebMail.SmtpPort = 587;
                 WebMail.EnableSsl = true;
                 WebMail.UserName = "seva.tsarev@gmail.com";
-                WebMail.Password = "dhuj iozk xjwk sugy";
+                WebMail.Password = "*";
                 WebMail.From = "seva.tsarev@gmail.com";
                 WebMail.Send("seva.tsarev@gmail.com", "Vastus kutsele", guest.Name + " Vastus" + ((guest.WillAttend ?? false) ?
                     "tuleb poele " : "ei tule poele"));
