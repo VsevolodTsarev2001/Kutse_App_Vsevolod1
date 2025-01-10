@@ -5,23 +5,33 @@
 }
 
 <div>
-    <p> Tänan sind, @Model.Name </p>
-
+    <p>Tänan sind, @Model.Name</p>
 </div>
+
 <div>
     @if (Model.WillAttend == true)
-            {
-                @:Ootame sind kallis sõber!
-                <p>
-                    <img src="~/Images/kutse.png" />
-                </p>
+    {
+        <p>Ootame sind kallis sõber!</p>
+        <p>
+            <img src="~/Images/super.jpg" />
+        </p>
+        <!-- Button for sending reminder -->
+        using (Html.BeginForm("SendReminder", "Home", FormMethod.Post))
+        {
+            @Html.HiddenFor(x => x.Name)
+            @Html.HiddenFor(x => x.Email)
+            @Html.HiddenFor(x => x.WillAttend)
+
+            <input type="submit" value="Meeldetuletus" class="btn btn-warning" />
+        }
     }
     else
-            {
-                @:Väga kurb uudis. Näeme hiljem!
-                <p>
-                    <img src="~/Images/kutse.png" />
-                </p>
-            }
-    @ViewBag.Message @*ViewBag.Message - отчет об отправке письма с приглашением*@
+    {
+        <p>Väga kurb uudis. Näeme hiljem!</p>
+        <p>
+            <img src="~/Images/net.jpg" />
+        </p>
+    }
+
+    @ViewBag.Message
 </div>

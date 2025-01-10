@@ -3,15 +3,144 @@
 }
 
 <div class="jumbotron">
-    <h1> @ViewBag.Greeting , Kallis sõber!</h1>
+    <h1>@ViewBag.Greeting</h1>
+</div>
 
+<div class="holiday-message">
+    <p>@ViewBag.HolidayInfo.Message</p>
+    <img src="@Url.Content(ViewBag.HolidayInfo.ImagePath)" alt="Holiday Image" class="img-responsive" />
 </div>
 
 <div>
-    @ViewBag.Message
-    <img src="~/Images/kutse.png" />
+    @Html.ActionLink("Vastan", "Ankeet", "Home", null, new { @class = "btn btn-primary" })
 </div>
-<div>
-    @Html.ActionLink("Vastan", "Ankeet", "Ankeet", new { @class = "btn btn-primary" })
 
-</div>
+
+<style>
+    /* Дополнительные стили для страницы */
+    body {
+        background: linear-gradient(to right, #e2e2e2, #ffffff);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Стиль для контейнера с контентом */
+    .container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px 0;
+    }
+
+    /* Картинка с плавными переходами */
+    .img-responsive {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        transition: transform 0.4s ease, box-shadow 0.3s ease;
+    }
+
+        .img-responsive:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+    /* Кнопка с эффектом */
+    .btn {
+        display: inline-block;
+        background: linear-gradient(to right, #007bff, #00c6ff);
+        color: white;
+        padding: 15px 30px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 1.1em;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+        .btn:hover {
+            background: linear-gradient(to right, #0056b3, #00408d);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+    /* Дополнительное оформление для текста */
+    .holiday-message {
+        font-size: 1.2em;
+        font-family: 'Georgia', serif;
+        color: #333;
+        font-style: italic;
+        text-align: center;
+        margin-top: 40px;
+        transition: color 0.3s ease;
+    }
+
+        .holiday-message:hover {
+            color: #007bff;
+        }
+
+    /* Стиль для блоков с текстом */
+    h1, h2 {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 600;
+        color: #333;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    /* Стиль для текста в абзацах */
+    p {
+        font-size: 1.15em;
+        line-height: 1.8;
+        color: #555;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    /* Тень на контент */
+    .content {
+        padding: 30px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
+    }
+
+        .content:hover {
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+    /* Стиль для футера */
+    footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #333;
+        color: white;
+        font-size: 1em;
+        margin-top: 40px;
+        border-radius: 5px;
+    }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+            footer a:hover {
+                text-decoration: underline;
+            }
+</style>
