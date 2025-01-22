@@ -113,6 +113,13 @@ namespace Kutse_App_Vsevolod.Controllers
 
             return holidayInfo;
         }
+        GuestContext db = new GuestContext();
+        
+        public ActionResult Guests()
+        {
+            IEnumerable<Guest> guests = db.Guests;
+            return View (guests);
+        }
 
         [HttpGet]
 
@@ -126,6 +133,8 @@ namespace Kutse_App_Vsevolod.Controllers
             E_mail(guest); // Функция для отправки письма с ответом
             if (ModelState.IsValid)
             {
+                db.Guests.Add(guest);
+                db.SaveChanges();
                 return View("Thanks", guest);
             }
             else
