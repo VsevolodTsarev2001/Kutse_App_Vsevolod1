@@ -134,7 +134,7 @@
     <Compile Include="Models\GuestDBInitializer.cs" />
     <Compile Include="Models\Guest.cs" />
     <Compile Include="Models\GuestContext.cs" />
-    <Compile Include="Models\Pidu.cs" />
+    <Compile Include="Models\Puhkus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -232,6 +232,8 @@
     <Content Include="Views\Home\Ankeet.cshtml" />
     <Content Include="Views\Home\Thanks.cshtml" />
     <Content Include="Views\Home\Guests.cshtml" />
+    <Content Include="Views\Home\Create.cshtml" />
+    <Content Include="Views\Home\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

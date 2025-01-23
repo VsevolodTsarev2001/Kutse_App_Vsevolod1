@@ -9,6 +9,7 @@ namespace Kutse_App_Vsevolod.Models
     public class GuestContext : DbContext
     {
         public DbSet<Guest> Guests { get; set; }
-        public DbSet<Pidu> Peods { get; set; }
+        public DbSet<Puhkus> Puhkused { get; set; } // Список праздников
+    
     }
 }
